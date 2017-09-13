@@ -1,0 +1,89 @@
+
+<div class="margin-top">
+  <div class="eq-height">
+          <div class="col-md-4 eq-box-sm">
+              <div class="panel">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Add Event</h3>
+                  </div>
+                  <form  (submit)="addEvent(title.value, mytime.value, mydate.value, description.value)" class="form-horizontal" >
+                      <div class="panel-body">
+                          <div class="form-group">
+                              <!-- <label for="" class="col-sm-3 control-label">Title</label> -->
+                              <div class="col-sm-12">
+                                  <input type="text" placeholder="Event Title" class="form-control" #title>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <!-- <label for="" class="col-sm-3 control-label">Time</label> -->
+                            <div class="col-sm-12">
+                                <div class="input-group date">
+                                    <input id="" type="time" class="form-control" #mytime>
+                                    <span class="input-group-addon"><i class="fa fa-clock-o fa-lg"></i></span> 
+                                </div>
+                                <!-- <small class="text-muted">Refresh page if not loading</small>  -->
+                            </div>
+                          </div>
+                          <div class="form-group">
+                              <!-- <label for="" class="col-sm-3 control-label">Date</label> -->
+                              <div class="col-sm-12">
+                                  <div id="">
+                                      <div class="input-group date">
+                                          <input type="date" class="form-control" #mydate>
+                                          <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span> 
+                                      </div>
+                                  </div>
+                                  <!-- <small class="text-muted">Refresh page if not loading</small>  -->
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <!-- <label for="" class="col-sm-3 control-label">Description</label> -->
+                              <div class="col-sm-12">
+                                  <textarea id="demo-textarea-input" rows="9" class="form-control" placeholder="Event description.." #description></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                             <!-- <label for="" class="col-sm-3 control-label"></label> -->
+                              <div class="col-sm-12">
+                                  <input type="submit"  class="btn btn-primary"  value="Create Event"/>
+                              </div>
+                            </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <div class="col-md-8 eq-box-sm">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">List Of Events</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-vcenter">
+                            <thead>
+                                <tr>    
+                                  <th>Event Title</th>
+                                  <th>Time</th>
+                                  <th>Date</th>
+                                  <th>Description</th>
+                                  <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let eve of events ! async">
+                                    <td>{{eve.title}}</td>
+                                    <td>{{eve.time}}</td>
+                                    <td>{{eve.date}}</td>
+                                    <td>{{eve.description}}</td>
+                                    <td>
+                                        <div class="label label-table label-danger" (click)="delete(eve.$key)">Delete</div>
+                                    </td>
+                                </tr>
+                           
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+     
+  </div>
+</div>

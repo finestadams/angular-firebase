@@ -1,0 +1,75 @@
+<header id="navbar">
+  <div id="navbar-container" class="boxed">
+      <!--Brand logo & name-->
+      <!--================================-->
+      <div class="navbar-header">
+          <a class="navbar-brand">
+              <div class="brand-title">
+                  <span class="brand-text">APGMPN</span>
+              </div>
+          </a>
+      </div>
+      <!--================================-->
+      <!--End brand logo & name-->
+      <!--Navbar Dropdown-->
+      <!--================================-->
+      <div class="navbar-content clearfix">
+         
+          <ul class="nav navbar-top-links pull-right">
+              
+            <!-- <li id="dropdown-user" class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                    <span class="pull-right"> <img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture"> </span>
+                    <div class="username hidden-xs">Adams</div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right with-arrow">
+                    
+                    <ul class="head-list">
+                        <li>
+                            <a> <i class="fa fa-sign-out fa-fw"></i> Logout </a>
+                        </li>
+                    </ul>
+                </div>
+            </li> -->
+              
+          </ul>
+      </div>
+      <!--================================-->
+      <!--End Navbar Dropdown-->
+      <nav class="navbar navbar-default megamenu" *ngIf="isloggedIn">
+          <div class="navbar-header">
+              <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle">
+              <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+              </button>
+          </div>
+          <!-- end navbar-header -->
+          <div   id="defaultmenu" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav" style="width:100%;">
+                  <!-- standard drop down -->
+                  <!-- <li>
+                      <a routerLink = "/">Home</a>
+                  </li> -->
+                  <li>
+                    <a routerLink = "contacts">Contacts</a>
+                  </li>
+                  <li>
+                    <a routerLink = "journals">Publish Journal</a>
+                  </li>
+                  <li>
+                    <a routerLink = "events">Add Events</a>
+                  </li>
+                  <li>
+                    <a routerLink = "notifications">Post Notification</a>
+                  </li>
+                  <li class="pull-right">
+                    <a (click)="logOut()">Log Out</a>
+                  </li>
+                  <!-- standard drop down -->
+              </ul>
+      
+          </div>
+          <!-- end #navbar-collapse-1 -->
+      </nav>
+      <!-- end navbar navbar-default megamenu -->
+  </div>
+</header>
